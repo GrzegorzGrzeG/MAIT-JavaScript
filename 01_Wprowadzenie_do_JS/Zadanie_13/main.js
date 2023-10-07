@@ -1,9 +1,8 @@
 var arr = [1, 2, 3, 4, 5, 6, 7];
-var sum = 0;
-for (let i = 0; i < arr.length; i++) {
-    if(arr[i] % 2 === 0){
-        sum += arr[i];
-        console.log(arr[i])
-    }
+const result = arr.filter(f);
+
+function f(n) {
+    return n % 2 === 0;
 }
-console.log(sum / arr.length)
+
+console.log(result.reduce((a, b) => a + b) / result.length);
