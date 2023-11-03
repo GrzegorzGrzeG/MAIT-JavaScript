@@ -1,14 +1,7 @@
-//Zadanie 1
+const n1 = 2;
+const n2 = 4;
+console.log(`Suma dwóch liczb ${n1} i  ${n2} to: ${n1 + n2}`)
 
-const num1 = 17;
-const num2 = 3;
-const template = `Suma dwóch liczb ${num1} i ${num2} to: ${num1+num2}`;
-console.log(template);
-const template2 = "Suma dwóch liczb " + num1 + " i " + num2 + " to: " + (num1+num2);
-console.log(template2);
-//Suma dwóch liczb 2 i 4 to: 6
-
-//Zadanie 2
 
 const person = {
     name: "Vlad",
@@ -16,17 +9,12 @@ const person = {
     yearOfBirth: 1431,
     profession: "Lord of Wallachia"
 };
-
-function whoAreYou(data) {
-const printText =
-`My name is ${data.name} ${data.lastName}.
-I am ${new Date().getFullYear() - data.yearOfBirth} years old.
-My profession is ${data.profession}.`;
-    return printText;
+const whoAreYou = ({name, lastname, yearOfBirth, profession}) => {
+    console.log(`My name is ${name} ${lastname}.`);
+    console.log(`I am ${2023 - yearOfBirth} years old.`);
+    console.log(`My profession is ${profession}.`)
 }
 
-console.log(whoAreYou(person));
 
-//My name is Vlad Drăculea.
-// I am 586 years old.
-// My profession is Lord of Wallachia.
+whoAreYou(person);
+

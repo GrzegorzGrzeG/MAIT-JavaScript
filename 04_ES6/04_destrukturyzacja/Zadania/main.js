@@ -6,11 +6,10 @@ console.log(pawel)
 
 const generateRandomNumbers = () => {
     let arr = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 6; i++) {
         let n = Math.floor(Math.random() * 5);
-        arr[i] = n;
+        arr.push(n);
     }
-
     const[first,,third] = arr;
     console.log(first + " : " + third)
     return arr;
@@ -22,8 +21,8 @@ const cat = {
     age: 10,
     getVoice: () => "miau miau"
 };
-const showAnimal = ({name, catAge, getVoice}) => {
+
+const showAnimal = ({name, age : catAge, getVoice}) => {
     console.log(`Kot ${name} ma ${catAge} lat i robi ${getVoice()}`);
 }
-
 showAnimal(cat)
