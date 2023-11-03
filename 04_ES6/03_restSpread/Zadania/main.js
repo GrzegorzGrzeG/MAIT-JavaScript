@@ -1,28 +1,26 @@
-// Zadanie 2
+const a = ["Zosia", "Marcin", "Kamil"] // Tablica 1
+const b = ["Ala", "Puszek", "Zosia" ]// Tablica 2
+const c = [...a,...b]
+console.log(c)
 
-const getAverage = (...params) => {
-    //const sum = params.reduce((prev, cur) => prev + cur);
+
+const name = "Grzegorz";
+const nameArr = [...name];
+console.table(nameArr)
+
+const fruits = ["apple", "banana"]
+const vegetables = ["tomato", "cucamber"]
+const mix = [...fruits, ...vegetables]
+console.log(mix)
+
+
+const getAverage = (...el) => {
     let sum = 0;
-    //params.forEach(el => sum += el);
-    for (let i = 0; i < params.length ; i++) {
-        sum = sum + params[i];
-    }
-    console.log(params, sum);
+    el.map((el) => sum += el);
 
-    return sum/params.length;
+    return sum / el.length;
 }
-
-getAverage(2, 4, 5, 6, 7, 79);
-
-//Zadanie 3
-
-const myName = "Grzegorz";
-const nameChars = [...myName];
-const nameChars2 = myName.split("");
-console.log(nameChars);
-console.log(nameChars2);
-
-//Zadanie 5
+console.log(getAverage(2,4,5,6,7,79))
 
 const state = {
     invoiceSection: false,
@@ -30,16 +28,8 @@ const state = {
     formStatus: "failed",
     isUserLogged: false
 };
-// Twoim zadaniem jest stworzenie kopii obiektu state w zmiennej stateCopy wraz ze zmianą dwóch właściwości:
-//
-// availableYears - powinno teraz zawierać tylko lata do 1999 włącznie (użyj odpowiedniej metody tablicowej)
-// isUserLogged - powinno mieć wartość true
-// Na koniec sprawdź w konsoli czy obiekt state pozostał bez zmian.
 
-const stateCopy = {
-    ...state,
-    availableYears : state.availableYears.filter(el => el <= 1999),
-    isUserLogged: !state.isUserLogged
-}
-
-console.log(stateCopy);
+const stateCopy = {...state,
+isUserLogged: true,
+availableYears: state.availableYears.filter(el => el <= 1999)};
+console.log(stateCopy)

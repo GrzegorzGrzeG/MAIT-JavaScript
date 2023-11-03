@@ -16,6 +16,7 @@ const insertLinks = (arr, container) => {
         newA.textContent = el;
         newA.href = el;
         newLi.append(newA);
-        container.append(newLi)})
+        container.append(newLi)
+    })
 }
 insertLinks(generateLinks(arr),menu)
